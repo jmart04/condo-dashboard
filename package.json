@@ -2,12 +2,17 @@
   "name": "condo-dashboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jmart04.github.io/condo-dashboard",
   "dependencies": {
+    "ajv": "^6.4.0",
+    "gh-pages": "^1.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
+	"predeploy": "npm run build",
+	"deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
