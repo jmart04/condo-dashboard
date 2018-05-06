@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RestaurantSpinner from './components/ResturantSpinner.js';
+import RestaurantSpinner from './components/RestaurantSpinner';
 import logo from './logo.svg';
 import './App.css';
 
