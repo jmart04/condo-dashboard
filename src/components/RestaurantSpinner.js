@@ -3,15 +3,17 @@ import Constants from '../Constants';
 
 export default class RestaurantSpinner extends React.Component {
     constructor(props) {
+        console.log("Init component");
         super(props);
         this.state = { 
             restaurantData: null,
             filters: null
         }
-        this.getResturants();
+        this.getRestaurants();
     }
 
-    getResturants = (e) => {
+    getRestaurants = () => {
+        console.log("Entering getRestaurants");
         var restaurantJSON = localStorage.getItem(Constants.RESTAURANT_DATA_KEY);
 
         console.log(restaurantJSON);
