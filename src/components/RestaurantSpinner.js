@@ -1,7 +1,7 @@
 import React from 'react';
 import Constants from '../Constants';
 
-export default class ResturantSpinner extends React.Component {
+export default class RestaurantSpinner extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RestaurantSpinner from './components/ResturantSpinner';
+import RestaurantSpinner from './components/ResturantSpinner.js';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload. Test123456789999123
         </p>
-        <RestaurantSpinner />
+        <ResturantSpinner />
       </div>
     );
   }
