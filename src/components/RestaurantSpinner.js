@@ -9,6 +9,7 @@ export default class RestaurantSpinner extends React.Component {
             restaurantData: null,
             filters: null
         }
+        this.initRestaurantSeed();
         this.getRestaurants();
     }
 
@@ -20,7 +21,7 @@ export default class RestaurantSpinner extends React.Component {
 
         if (restaurantJSON == null) {
             console.log(Constants.RESTAURANT_DATA_KEY + " is empty");
-            restaurantJSON = {};
+            restaurantJSON = [];
             localStorage.setItem(Constants.RESTAURANT_DATA_KEY, JSON.stringify(restaurantJSON));
         } 
         else 
@@ -30,6 +31,23 @@ export default class RestaurantSpinner extends React.Component {
         }
         this.setState({ restaurantData: restaurantJSON });
         return restaurantJSON;
+    }
+
+    initRestaurantSeed = () => {
+        var restaurants = [
+            {
+                name: "Revival",
+                cuisine: "Southern",
+                selectionCount: 0
+            }
+        ];
+        
+        this.setState({ restaurantData: restaurants });
+        this.saveRestaurants();
+    }
+
+    saveRestaurants = () => {
+        localStorage.setItem(Constants.RESTAURANT_DATA_KEY, JSON.stringify(this.state.restaurantData));
     }
 
     toRestaurantJSONString = (e) => {
