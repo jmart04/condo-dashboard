@@ -14,12 +14,16 @@ export default class RestaurantSpinner extends React.Component {
     getResturants = (e) => {
         var restaurantJSON = localStorage.getItem(Constants.RESTAURANT_DATA_KEY);
 
+        console.log(restaurantJSON);
+
         if (restaurantJSON == null) {
+            console.log(Constants.RESTAURANT_DATA_KEY + " is empty");
             restaurantJSON = {};
             localStorage.setItem(Constants.RESTAURANT_DATA_KEY, JSON.stringify(restaurantJSON));
         } 
         else 
         {
+            console.log(Constants.RESTAURANT_DATA_KEY + " is not empty");
             restaurantJSON = JSON.parse(restaurantJSON);
         }
         this.setState({ restaurantData: restaurantJSON });
